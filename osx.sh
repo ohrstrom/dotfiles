@@ -97,6 +97,15 @@ sudo chflags uchg /private/var/vm/sleepimage
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0
 
+
+# disable swap
+# http://apple.stackexchange.com/questions/84784/128gb-ssd-and-23gb-of-sleep-image-swap-file-what-to-do
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dynamic_pager.plist
+
+# hybernation mode (non-persistent)
+sudo pmset -a hibernatemode 0
+
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
