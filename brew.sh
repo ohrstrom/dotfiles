@@ -16,18 +16,20 @@ brew upgrade
 
 
 # Install other useful binaries
-brew install nodejs
+#brew install nodejs
 brew install tree
 brew install bash-completion
 brew install ssh-copy-id
 brew install wget
+brew install tmux
+brew install mysql
 brew install htop-osx
-brew install ffmpeg --with-libvpx
+#brew install ffmpeg --with-libvpx
 brew install dark-mode
 brew install watch
 brew install unrar
 brew install iftop
-brew install python
+#brew install python
 
 # Dependencies
 brew install libxml2
