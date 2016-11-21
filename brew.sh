@@ -35,6 +35,9 @@ brew install iftop
 brew install libxml2
 brew install libxslt
 
+# tmux
+brew install reattach-to-user-namespace --wrap-pbcopy-pbpaste && brew link reattach-to-user-namespace
+
 
 
 # Remove outdated versions from the cellar
