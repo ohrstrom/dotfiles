@@ -31,6 +31,12 @@ brew install unrar
 brew install iftop
 #brew install python
 
+# other tools & libs & utils..
+brew install ffmpeg
+brew install imagemagick
+brew install heroku
+
+
 # Dependencies
 brew install libxml2
 brew install libxslt
@@ -38,6 +44,10 @@ brew install libxslt
 # tmux
 brew install reattach-to-user-namespace --wrap-pbcopy-pbpaste && brew link reattach-to-user-namespace
 
+# docker
+brew install docker
+brew install docker-machine
+brew install docker-compose
 
 
 # Remove outdated versions from the cellar
