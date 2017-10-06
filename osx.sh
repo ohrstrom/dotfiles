@@ -84,15 +84,13 @@ defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 # Disable local Time Machine snapshots
 sudo tmutil disablelocal
 
-# Disable hibernation (speeds up entering sleep mode)
-sudo pmset -a hibernatemode 0
 
 # Remove the sleep image file to save disk space
-sudo rm /private/var/vm/sleepimage
+#sudo rm /private/var/vm/sleepimage
 # Create a zero-byte file instead…
-sudo touch /private/var/vm/sleepimage
+#sudo touch /private/var/vm/sleepimage
 # …and make sure it can’t be rewritten
-sudo chflags uchg /private/var/vm/sleepimage
+#sudo chflags uchg /private/var/vm/sleepimage
 
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0
@@ -103,7 +101,10 @@ sudo pmset -a sms 0
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dynamic_pager.plist
 
 # hybernation mode (non-persistent)
-sudo pmset -a hibernatemode 0
+# sudo pmset -a hibernatemode 0
+sudo pmset -a hibernatemode 3
+
+
 
 
 ###############################################################################

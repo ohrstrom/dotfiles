@@ -1,1 +1,3 @@
 bin/ohrstrom*
+.idea
+vim/bundle/Vundle.vim*
