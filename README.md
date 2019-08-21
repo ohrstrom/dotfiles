@@ -1,31 +1,37 @@
 # Dotfiles
 
-## Overview
 
-This repo is a skeleton/template repo for tracking dotfiles.  It contains
-a utility ([dfm](https://github.com/justone/dfm)) to help with managing and
-updating your dotfiles.
 
-## Using this repo
+## Shell
 
-First, fork this repo.
+    chsh -s /bin/zsh
 
-Then, add your dotfiles:
+    # zprezto
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+    setopt EXTENDED_GLOB
+    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+      ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+    done
 
-    $ git clone git@github.com:username/dotfiles.git .dotfiles
-    $ cd .dotfiles
-    $  # edit files
-    $  # edit files
-    $ git push origin master
 
-Finally, to install your dotfiles onto a new system:
 
-    $ cd $HOME
-    $ git clone git@github.com:username/dotfiles.git .dotfiles
-    $ ./.dotfiles/bin/dfm install # creates symlinks to install files
+## Homebrew
 
-## Full documentation
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-For more information, check out the [wiki](http://github.com/justone/dotfiles/wiki).
+## Sync VAULT data
 
-You can also run <tt>dfm --help</tt>.
+    hdiutil mount ~/Drive/My\ Drive/Jonas/access/VAULT.dmg
+    rsync -av /Volumes/VAULT/ohrstrom/.ssh/ ~/.ssh/
+
+
+
+## Dotfiles
+
+    git clone git@github.com:ohrstrom/dotfiles.git ~/.dotfiles
+    cd ~/.dotfiles
+
+    # Bootstrap configuration
+    ./osx.sh
+    
+
