@@ -1,0 +1,68 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+DIRECTORIES = [
+    ".aws",
+    ".credentials",
+    ".keys",
+    ".s3cfg",
+    ".ssh",
+]
+
+FILES = [
+    ".kube/config",
+    ".kube/mci-com-sensirion",
+    ".kube/do",
+    ".kube/gcp",
+    #
+    ".passwd-s3fs",
+    ".pbi.cfg",
+]
+
+
+HOME_PATH = "/Users/ohrstrom"
+VAULT_PATH = "/Volumes/VAULT/ohrstrom/"
+
+
+def sync_to_vault():
+
+    if not os.path.isdir(VAULT_PATH):
+        raise Exception("invalid vault directory: {}".format(VAULT_PATH))
+
+    tpl_dir = "rsync -av {src}/ {dst}/"
+    tpl_file = "rsync -av {src} {dst}"
+
+    for dir in DIRECTORIES:
+        dir = dir.rstrip("/")
+
+        src = os.path.join(HOME_PATH, dir)
+        dst = os.path.join(VAULT_PATH, dir)
+
+        cmd = tpl_dir.format(src=src, dst=dst)
+        print('running: {}'.format(cmd))
+        p = os.system(cmd)
+        print('-' * 72)
+
+    for path in FILES:
+
+        src = os.path.join(HOME_PATH, path)
+        dst = os.path.join(VAULT_PATH, path)
+
+        try:
+            os.makedirs(os.path.dirname(dst))
+        except FileExistsError:
+            pass
+
+        cmd = tpl_file.format(src=src, dst=dst)
+        print("running: {}".format(cmd))
+        p = os.system(cmd)
+        print("-" * 72)
+
+
+if __name__ == "__main__":
+
+    print(sys.argv)
+
+    sync_to_vault()
