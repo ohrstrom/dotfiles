@@ -28,7 +28,7 @@ brew install iftop
 brew install ffmpeg
 brew install imagemagick
 brew install heroku
-brew install mas                     # https://github.com/mas-cli/mas
+brew install mas # https://github.com/mas-cli/mas
 
 # Dependencies
 brew install libxml2

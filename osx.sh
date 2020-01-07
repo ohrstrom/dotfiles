@@ -82,7 +82,7 @@ defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 ###############################################################################
 
 # Disable local Time Machine snapshots
-sudo tmutil disablelocal
+# sudo tmutil disablelocal
 
 
 # Remove the sleep image file to save disk space
@@ -98,7 +98,7 @@ sudo pmset -a sms 0
 
 # disable swap
 # http://apple.stackexchange.com/questions/84784/128gb-ssd-and-23gb-of-sleep-image-swap-file-what-to-do
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dynamic_pager.plist
+# sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dynamic_pager.plist
 
 # hybernation mode (non-persistent)
 # sudo pmset -a hibernatemode 0
