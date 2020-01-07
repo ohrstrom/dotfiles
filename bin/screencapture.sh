@@ -22,5 +22,3 @@ tell application "QuickTime Player"
     delay 1
     do shell script "~/bin/clickdrag -x 50 -y 50 -dx 1600 -dy 1000"
 end tell'
-
-#screencapture -l$(osascript -e 'tell app "Safari" to id of window 1') $1

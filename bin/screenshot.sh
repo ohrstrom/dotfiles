@@ -11,4 +11,4 @@ osascript -e 'tell application "System Events" to tell process "Safari"
     end tell
 end tell'
 
-screencapture -T 5 -o -l$(osascript -e 'tell app "Safari" to id of window 1') $1
+screencapture -T 2 -o -l$(osascript -e 'tell app "Safari" to id of window 1') $1

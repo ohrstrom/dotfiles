@@ -1,4 +1,5 @@
 #!/usr/bin/env xcrun swift
+
 import Foundation
 
 let kDelayUSec : useconds_t = 500_000
