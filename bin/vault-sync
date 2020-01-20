@@ -61,7 +61,7 @@ def sync_vault(src_base, dst_base, directories=[], files=[]):
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description="VAULT synch")
+    parser = argparse.ArgumentParser(description="VAULT sync")
     parser.add_argument(
         "-m",
         "--mode",

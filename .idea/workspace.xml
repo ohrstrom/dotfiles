@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d24fb09e-2090-4847-8819-c954b1529bee" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.dfminstall" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.osx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.spacemacs" beforeDir="false" afterPath="$PROJECT_DIR$/.spacemacs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.zpreztorc" beforeDir="false" afterPath="$PROJECT_DIR$/.zpreztorc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/dfm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/brew.sh" beforeDir="false" afterPath="$PROJECT_DIR$/brew.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/osx.sh" beforeDir="false" afterPath="$PROJECT_DIR$/osx.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/vault-sync" beforeDir="false" afterPath="$PROJECT_DIR$/bin/vault-sync" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +63,8 @@
       <workItem from="1567972009142" duration="1333000" />
       <workItem from="1573383291930" duration="699000" />
       <workItem from="1578235242904" duration="2122000" />
+      <workItem from="1578401838357" duration="393000" />
+      <workItem from="1578571809405" duration="5815000" />
     </task>
     <servers />
   </component>

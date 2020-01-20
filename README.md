@@ -43,3 +43,8 @@
     pip install pipenv
     
     
+## Node Tools
+
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+    nvm install v12.14.1
+    npm install -g yarn
