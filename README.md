@@ -35,6 +35,11 @@
     
 ## Python Tools
 
+    curl -L dephell.org/install | python3
+
+    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+    poetry completions bash > $(brew --prefix)/etc/bash_completion.d/poetry.bash-completion
+
     brew install pyenv
     pyenv install 3.7.5
     pyenv global 3.7.5
@@ -48,3 +53,29 @@
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
     nvm install v12.14.1
     npm install -g yarn
+    
+
+## Cloud Tools
+
+    # gcp
+    curl https://sdk.cloud.google.com | bash
+    exec -l $SHELL
+    
+    gcloud init
+
+    # heroku
+    brew tap heroku/brew
+    brew install heroku
+    
+    heroku login
+
+    # aws
+    pip install --user awscli
+    pip install --user s3cmd
+    
+    aws configure
+
+    # azure
+    brew install azure-cli
+    
+    az login
