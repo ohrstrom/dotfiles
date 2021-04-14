@@ -29,6 +29,17 @@ brew install ffmpeg
 brew install imagemagick
 brew install heroku
 brew install mas # https://github.com/mas-cli/mas
+brew install \
+  fzf \
+  fd \
+  glances \
+  ctop \
+  lazydocker \
+  bat \
+  httpie \
+  pgcli \
+  ncdu \
+  ripgrep
 
 # Dependencies
 brew install libxml2

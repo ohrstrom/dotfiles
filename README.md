@@ -2,13 +2,15 @@
 
 ## Shell
 
-    chsh -s /bin/zsh
-    # zprezto
-    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-    setopt EXTENDED_GLOB
-    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-      ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-    done
+```
+chsh -s /bin/zsh
+# zprezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+```
 
 ## Homebrew
 
@@ -24,6 +26,14 @@
 
     git clone git@github.com:ohrstrom/dotfiles.git ~/.dotfiles
     cd ~/.dotfiles
+
+    # link config files
+    
+    ln -s ~/.dotfiles/.iterm2 ~/.iterm2
+    ln -s ~/.dotfiles/.spacemacs ~/.spacemacs
+    rm ~/.zshrc
+    ln -s ~/.dotfiles/.zshrc ~/.zshrc
+
 
     # Bootstrap configuration
     ./osx.sh
@@ -41,18 +51,25 @@
     poetry completions bash > $(brew --prefix)/etc/bash_completion.d/poetry.bash-completion
 
     brew install pyenv
-    pyenv install 3.7.5
-    pyenv global 3.7.5
+    pyenv install 3.8.3
+    pyenv global 3.8.3
     
     pip install --upgrade pip
-    pip install pipenv
+    # pip install pipenv
     
     
 ## Node Tools
 
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
-    nvm install v12.14.1
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+    nvm install v12.18.1
     npm install -g yarn
+    rvm use ruby-3.0.0 --default
+    
+    
+## Ruby Tools
+
+    curl -sSL https://get.rvm.io | bash -s stable
+    rvm install ruby@latest
     
 
 ## Cloud Tools
@@ -79,3 +96,46 @@
     brew install azure-cli
     
     az login
+
+
+## Apllications
+
+```shell script
+brew install wget
+```
+
+```shell script
+wget https://dl.google.com/drive-file-stream/GoogleDriveFileStream.dmg
+hdiutil mount GoogleDriveFileStream.dmg
+sudo installer -pkg /Volumes/Install\ Google\ Drive\ File\ Stream/GoogleDriveFileStream.pkg -target "/Volumes/SSD"
+hdiutil unmount /Volumes/Install\ Google\ Drive\ File\ Stream/
+```
+
+```shell script
+brew install mplayershell
+```
+
+## Dev & co
+
+```shell script
+brew install redis
+brew services start redis
+```
+
+## emacs / spacemacs
+
+
+```shell script
+brew tap d12frosted/emacs-plus
+# brew install emacs-plus
+brew install emacs-plus@27 --HEAD --without-cocoa
+brew link emacs-plus@27
+
+# optional
+brew services start d12frosted/emacs-plus/emacs-plus@27
+
+```
+
+```shell script
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+```

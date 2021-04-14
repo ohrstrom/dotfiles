@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d24fb09e-2090-4847-8819-c954b1529bee" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.spacemacs" beforeDir="false" afterPath="$PROJECT_DIR$/.spacemacs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.zpreztorc" beforeDir="false" afterPath="$PROJECT_DIR$/.zpreztorc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.zshrc" beforeDir="false" afterPath="$PROJECT_DIR$/.zshrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/vault-sync" beforeDir="false" afterPath="$PROJECT_DIR$/bin/vault-sync" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brew.sh" beforeDir="false" afterPath="$PROJECT_DIR$/brew.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/osx.sh" beforeDir="false" afterPath="$PROJECT_DIR$/osx.sh" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,18 +35,28 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name=".dotfiles" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="aa0f8433-0048-4ed3-8601-86027418b50b" />
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="ybk0juz2" />
+  </component>
   <component name="ProjectId" id="1QZIz52U7ZCBx4K6VKMH5Dj9Hur" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210414_0003" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -37,18 +65,7 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -65,24 +82,37 @@
       <workItem from="1578235242904" duration="2122000" />
       <workItem from="1578401838357" duration="393000" />
       <workItem from="1578571809405" duration="5815000" />
+      <workItem from="1593001447201" duration="231000" />
+      <workItem from="1593002450258" duration="2836000" />
+      <workItem from="1594106353870" duration="1189000" />
+      <workItem from="1594728411470" duration="1809000" />
+      <workItem from="1594731583282" duration="2397000" />
+      <workItem from="1594991858600" duration="267000" />
+      <workItem from="1595588127787" duration="1956000" />
+      <workItem from="1596440752298" duration="5520000" />
+      <workItem from="1596807135201" duration="1161000" />
+      <workItem from="1596882398502" duration="1308000" />
+      <workItem from="1597648680569" duration="1164000" />
+      <workItem from="1597735078497" duration="1355000" />
+      <workItem from="1600422484818" duration="627000" />
+      <workItem from="1618298090070" duration="1642000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -91,5 +121,20 @@
     <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="100" y="123" width="1480" height="827" key="DiffContextDialog" timestamp="1596443147200">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="100" y="123" width="1480" height="827" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1596443147200" />
+    <state x="779" y="339" key="SettingsEditor" timestamp="1597735350803">
+      <screen x="0" y="23" width="3840" height="2137" />
+    </state>
+    <state x="341" y="175" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1596883693969" />
+    <state x="779" y="339" key="SettingsEditor/0.23.3840.2137@0.23.3840.2137" timestamp="1597735350802" />
+    <state x="1748" y="489" width="586" height="490" key="find.popup" timestamp="1596807506882">
+      <screen x="0" y="23" width="3840" height="2137" />
+    </state>
+    <state x="1748" y="489" width="586" height="490" key="find.popup/0.23.3840.2137/3840.1100.1680.1027@0.23.3840.2137" timestamp="1596807506882" />
   </component>
 </project>
