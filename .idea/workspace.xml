@@ -19,13 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d24fb09e-2090-4847-8819-c954b1529bee" name="Default" comment="">
+    <list default="true" id="d24fb09e-2090-4847-8819-c954b1529bee" name="Default" comment="Added rvm.">
+      <change afterPath="$PROJECT_DIR$/.tmux-linux.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.zshrc-linux" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/install-linux.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.spacemacs" beforeDir="false" afterPath="$PROJECT_DIR$/.spacemacs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tmux.conf" beforeDir="false" afterPath="$PROJECT_DIR$/.tmux.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.zshrc" beforeDir="false" afterPath="$PROJECT_DIR$/.zshrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/brew.sh" beforeDir="false" afterPath="$PROJECT_DIR$/brew.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/osx.sh" beforeDir="false" afterPath="$PROJECT_DIR$/osx.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +39,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.zshrc-linux" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JupyterTrust" id="aa0f8433-0048-4ed3-8601-86027418b50b" />
   <component name="MacroExpansionManager">
@@ -53,7 +58,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.google.cloudcode.ide_session_index" value="20210414_0003" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/code/openbroadcast.ch-next" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -64,6 +69,11 @@
         <option name="myUseModuleSdk" value="true" />
       </console-settings>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -95,8 +105,31 @@
       <workItem from="1597648680569" duration="1164000" />
       <workItem from="1597735078497" duration="1355000" />
       <workItem from="1600422484818" duration="627000" />
-      <workItem from="1618298090070" duration="1642000" />
+      <workItem from="1618298090070" duration="1729000" />
+      <workItem from="1618913877013" duration="530000" />
+      <workItem from="1626803888049" duration="359000" />
+      <workItem from="1626805161270" duration="4845000" />
+      <workItem from="1626860735046" duration="1139000" />
+      <workItem from="1626869084723" duration="110000" />
+      <workItem from="1626869205789" duration="3094000" />
+      <workItem from="1629970808769" duration="3844000" />
+      <workItem from="1636728740574" duration="2231000" />
     </task>
+    <task id="LOCAL-00001" summary="Added rvm.">
+      <created>1618397662427</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1618397662427</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added rvm.">
+      <created>1618397678207</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618397678207</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,19 +155,8 @@
       <collection />
     </option>
   </component>
-  <component name="WindowStateProjectService">
-    <state x="100" y="123" width="1480" height="827" key="DiffContextDialog" timestamp="1596443147200">
-      <screen x="0" y="23" width="1680" height="1027" />
-    </state>
-    <state x="100" y="123" width="1480" height="827" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1596443147200" />
-    <state x="779" y="339" key="SettingsEditor" timestamp="1597735350803">
-      <screen x="0" y="23" width="3840" height="2137" />
-    </state>
-    <state x="341" y="175" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1596883693969" />
-    <state x="779" y="339" key="SettingsEditor/0.23.3840.2137@0.23.3840.2137" timestamp="1597735350802" />
-    <state x="1748" y="489" width="586" height="490" key="find.popup" timestamp="1596807506882">
-      <screen x="0" y="23" width="3840" height="2137" />
-    </state>
-    <state x="1748" y="489" width="586" height="490" key="find.popup/0.23.3840.2137/3840.1100.1680.1027@0.23.3840.2137" timestamp="1596807506882" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added rvm." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added rvm." />
   </component>
 </project>
