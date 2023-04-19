@@ -1,7 +1,7 @@
-# Dotfiles
+# Dotfiles?
 
 Not purely a `.dotfiles` repo.  
-I just try to keep here my notes & comnfigs to setup / share state between machines...
+I just try to keep here my notes & configs to setup / share state between machines...
 
 ## Shell
 
