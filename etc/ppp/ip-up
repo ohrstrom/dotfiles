@@ -1,0 +1,4 @@
+/sbin/route add 10.35.0.0/24 -interface $1
+/sbin/route add 172.29.0.0/16 -interface $1
+/sbin/route add 172.30.0.0/16 -interface $1
+/sbin/route add 10.44.0.0/16 -interface $1

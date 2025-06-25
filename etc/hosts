@@ -1,0 +1,44 @@
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost
+
+
+##
+10.35.30.220    obox
+10.35.0.36     lbox
+127.0.0.1       local.openbroadcast.org
+127.0.0.1       local.openbroadcast.ch
+127.0.0.1       local.stream.openbroadcast.ch
+127.0.0.1       local.stream-dash.openbroadcast.ch
+127.0.0.1       local.digris.ch
+127.0.0.1       local.digris.fr
+127.0.0.1       local.digris.co.uk
+127.0.0.1       local.screen.adcast.ch
+127.0.0.1       local.spot.adcast.ch
+127.0.0.1       local.adcast-spot
+127.0.0.1       local.v2-daysy.me
+127.0.0.1       local.de.v2-daysy.me
+127.0.0.1       local.usa.v2-daysy.me
+127.0.0.1       local.ch.v2-daysy.me
+127.0.0.1       local.lady-comp.com
+127.0.0.1       local.lady-comp.ch
+127.0.0.1       local.valley.foundation
+127.0.0.1       local.next.openbroadcast.ch
+127.0.0.1       local.media.next.openbroadcast.ch
+127.0.0.1       local.screen.adcast.ch
+127.0.0.1       local.app-content.daysy.me
+127.0.0.1       local.myteena.com
+127.0.0.1       local.obr-next
+127.0.0.1       local.beyeler-collection
+
+
+# Added by Docker Desktop
+# To allow the same kube context to work on the host and the container:
+127.0.0.1 kubernetes.docker.internal
+# End of section

@@ -1,0 +1,75 @@
+#!/usr/bin/env python3
+
+"""
+(r)sync config between machines
+"""
+
+import argparse
+import os
+import sys
+
+DIRECTORIES = [
+    "~/.ssh",
+    "~/.keys", 
+    "~/.config/gcloud",
+    "~/.config/gh",
+    "~/.config/glab-cli",
+    "~/.aws", 
+    "~/.s3cfg", 
+]
+
+FILES = [
+    "~/.kube/config",
+]
+
+
+HOME_PATH = "/Users/ohrstrom"
+VAULT_PATH = "/Volumes/VAULT/ohrstrom/"
+
+
+def sync_vault(src_base, dst_base, directories=[], files=[]):
+
+    src_prefix = "" if src_base == "local" else f"{src_base}:"
+    dst_prefix = "" if dst_base == "local" else f"{dst_base}:"
+
+    tpl_dir = "rsync -av {src}/ {dst}/"
+    tpl_file = "rsync -av {src} {dst}"
+
+    print("# directories")
+    for path in directories:
+        src = f"{src_prefix}{path}"
+        dst = f"{dst_prefix}{path}"
+        cmd = tpl_dir.format(src=src, dst=dst)
+        print(cmd)
+        # p = os.system(cmd)
+        # print("-" * 72)
+
+    print("# files")
+    for path in files:
+        src = f"{src_prefix}{path}"
+        dst = f"{dst_prefix}{path}"
+        cmd = tpl_file.format(src=src, dst=dst)
+        print(cmd)
+        # p = os.system(cmd)
+        # print("-" * 72)
+
+
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(description="VAULT sync")
+    parser.add_argument(
+        "--src",
+        dest="src_host",
+        type=str,
+        help="source system hostname"
+    )
+    parser.add_argument(
+        "--dst",
+        dest="dst_host",
+        type=str,
+        help="destination system hostname"
+    )
+
+    args = parser.parse_args()
+
+    sync_vault(args.src_host, args.dst_host, directories=DIRECTORIES, files=FILES)

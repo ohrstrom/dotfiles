@@ -4,8 +4,12 @@ brew update && brew upgrade
 
 brew install \
   wget \
-  tmux \
+  direnv \
+  htop \
   iftop \
+  ncdu \
+  gh \
+  glab \
   reattach-to-user-namespace
 
 brew cleanup

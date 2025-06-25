@@ -2,6 +2,8 @@
 # Shell / Prompt / zsh
 #######################################################################
 
+#zmodload zsh/zprof
+
 # Prezto
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -44,7 +46,9 @@ eval "$(direnv hook zsh)"
 # pyenv
 # https://github.com/pyenv/pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 # poetry
@@ -58,9 +62,28 @@ export PATH="/Users/ohrstrom/.local/bin:$PATH"
 #######################################################################
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+export NVM_LAZY_LOAD=true
+source "/Users/ohrstrom/.zsh-nvm.plugin.zsh"
+
+
+#######################################################################
+# bun
+# https://bun.sh/
+#######################################################################
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+[ -s "/Users/ohrstrom/.bun/_bun" ] && source "/Users/ohrstrom/.bun/_bun"
+
+
+#######################################################################
+# cargo
+#######################################################################
+source "$HOME/.cargo/env"
 
 
 #######################################################################
@@ -75,12 +98,23 @@ export PATH=${PATH}:$GOBIN
 
 
 #######################################################################
+# asdf
+# https://asdf-vm.com/
+#######################################################################
+. "$HOME/.asdf/asdf.sh"
+
+fpath=(${ASDF_DIR}/completions $fpath)
+# autoload -Uz compinit && compinit
+
+
+#######################################################################
 # OCaml
 #######################################################################
 
 # opam
-# test -r /Users/ohrstrom/.opam/opam-init/init.zsh && . /Users/ohrstrom/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-eval $(opam env --switch=default)
+export OPAMSWITCH=default
+eval "$(opam env)"
+#eval "$(opam env --switch=default)"
 
 
 #######################################################################
@@ -88,53 +122,48 @@ eval $(opam env --switch=default)
 #######################################################################
 
 # autocompletion
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh)
 
 if [ -f '/Users/ohrstrom/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ohrstrom/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/Users/ohrstrom/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ohrstrom/google-cloud-sdk/completion.zsh.inc'; fi
 
 
-
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-
-
-
-
-
-# M1 c - https://apple.stackexchange.com/questions/414622/installing-a-c-c-library-with-homebrew-on-m1-macs
+# arm / M1/2 - https://apple.stackexchange.com/questions/414622/installing-a-c-c-library-with-homebrew-on-m1-macs
 export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
 
 
+# if [[ -n $KITTY_INSTALLATION_DIR ]]; then
+#   export KITTY_SHELL_INTEGRATION="enabled"
+#   autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
+#   kitty-integration
+#   unfunction kitty-integration
+#   #
+#   alias ssh="kitty +kitten ssh"
+# fi
+
+# uv / uvx
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+
+# starship prompt
+# eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/Users/ohrstrom/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/Users/ohrstrom/miniforge3/etc/profile.d/conda.sh" ]; then
-#        . "/Users/ohrstrom/miniforge3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/Users/ohrstrom/miniforge3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-# <<< conda initialize <<<
-
-# BEGIN SNIPPET: Platform.sh CLI configuration
-HOME=${HOME:-'/Users/ohrstrom'}
-export PATH="$HOME/"'.platformsh/bin':"$PATH"
-if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/ohrstrom/.docker/completions $fpath)
+# autoload -Uz compinit
+# compinit
+# End of Docker CLI completions
 
 
-# BEGIN_KITTY_SHELL_INTEGRATION
-if test -e "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; then source "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; fi
-# END_KITTY_SHELL_INTEGRATION
+# global compinit
+autoload -Uz compinit
+compinit -C
 
-# Fiberplane CLI (fp)
-export PATH="/Users/ohrstrom/.fiberplane:$PATH"
-source /Users/ohrstrom/.fiberplane/zsh_completions
+#zprof
+

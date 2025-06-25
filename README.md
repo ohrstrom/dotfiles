@@ -3,127 +3,141 @@
 Not purely a `.dotfiles` repo.  
 I just try to keep here my notes & configs to setup / share things between machines...
 
-## Shell
+## Code / Worksace
 
+```shell
+mkdir ~/code
+ln -s ~/code ~/Documents/Code
+```
 
-### Prezto
+## X-Code / Dev tools
 
-```shell script
-chsh -s /bin/zsh
+```shell
+xcode-select --install
+```
+
+## Access / Keys
+
+```shell
+SOURCE=mbp14.local
+USER=ohrstrom
+```
+
+Copy `ssh` keys & config from a current system:
+
+```shell
+rsync -avz ${USER}@${SOURCE}:/Users/ohrstrom/.ssh/ ~/.ssh/
+```
+
+## Shell / zsh / Prezto
+
+```shell
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
+
+chsh -s /bin/zsh
 ```
 
-```shell script
-# symlinks created
-~/.zlogin
-~/.zlogout
-~/.zpreztorc
-~/.zprofile
-~/.zshenv
-~/.zshrc
-```
+## Browser & Editor
 
+Chrome:  
+https://www.google.com/chrome/
 
-## Homebrew
+VSCode:  
+https://code.visualstudio.com/
 
-```shell script
-xcode-select --install
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-
-## Sync VAULT data (optional)
-
-```shell script
-hdiutil mount ~/Drive/My\ Drive/Jonas/access/VAULT.dmg
-rsync -av /Volumes/VAULT/ohrstrom/.ssh/ ~/.ssh/
-```
-
-
+Other [Desktop Apps](install/desktop-apps.md)
 
 ## Dotfiles
 
-```shell script
-git clone git@github.com:ohrstrom/dotfiles.git ~/dotfiles
-cd ~/dotfiles
+this repository ;)
 
-# link config files
-# zsh / prezto
+```shell
+git clone git@github.com:ohrstrom/dotfiles.git ~/code/dotfiles
+cd ~/code/dotfiles
+
+# config files - zsh / prezto
 rm ~/.zshrc
 rm ~/.zpreztorc
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.zpreztorc ~/.zpreztorc
+ln -s ~/code/dotfiles/.zshrc ~/.zshrc`
+ln -s ~/code/dotfiles/.zpreztorc ~/.zpreztorc
 
-# tools etc
-ln -s ~/dotfiles/.iterm2 ~/.iterm2
-ln -s ~/dotfiles/.spacemacs ~/.spacemacs
+# etc
+ln -s ~/code/dotfiles/.iterm2 ~/.iterm2`
+ln -s ~/code/dotfiles/.spacemacs ~/.spacemacs
+ln -s ~/code/dotfiles/.zsh-nvm.plugin.zsh ~/.zsh-nvm.plugin.zsh
+
+touch ~/.hushlogin # do not show "last login..." 
 
 # Apply macos system settings
 ./macos-settings.sh
 ```
 
+## Homebrew
 
-## Code Workspace
-
-```shell script
-mkdir ~/Documents/Code
-ln -s ~/Documents/Code ~/code
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
 ## Development Tooling
     
 ### Python
 
-```shell script
+```shell
 # pyenv
-brew install pyenv
-pyenv install --list
-
-pyenv install 3.9.7
+curl https://pyenv.run | bash
+pyenv install 3.11.3
+pyenv global 3.11.3
 
 # poetry
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+curl -sSL https://install.python-poetry.org | python3 -
 
 ```
 
-
     
-    
-### Node.js
+### Node
 
-```shell script
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+```shell
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
-nvm install v12.18.1
+nvm install node  # latest version
 npm install -g yarn
 ```
 
 
+### Go
+
+https://go.dev/dl/
+
+
+### OCaml
+
+```shell
+bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
+exec -l $SHELL
+opam init
+```
+
 ## Cloud & Co
 
-```shell script
+```shell
 # gcp
 curl https://sdk.cloud.google.com | bash
 exec -l $SHELL
 
 gcloud init
 
-# heroku
-brew tap heroku/brew
-brew install heroku
-
-heroku login
 
 # aws
 pip install --user awscli
 pip install --user s3cmd
 
 aws configure
+
 
 # azure
 brew install azure-cli
@@ -132,34 +146,12 @@ az login
 ```
 
 
-## Apllications
+## Various
 
-```shell script
-brew install wget
-```
-
-```shell script
-wget https://dl.google.com/drive-file-stream/GoogleDriveFileStream.dmg
-hdiutil mount GoogleDriveFileStream.dmg
-sudo installer -pkg /Volumes/Install\ Google\ Drive\ File\ Stream/GoogleDriveFileStream.pkg -target "/Volumes/SSD"
-hdiutil unmount /Volumes/Install\ Google\ Drive\ File\ Stream/
-```
-
-```shell script
-brew install mplayershell
-```
-
-## Dev & co
-
-```shell script
-brew install redis
-brew services start redis
-```
-
-## emacs / spacemacs
+### emacs / spacemacs
 
 
-```shell script
+```shell
 brew tap d12frosted/emacs-plus
 # brew install emacs-plus
 brew install emacs-plus@27 --HEAD --without-cocoa
@@ -170,6 +162,6 @@ brew services start d12frosted/emacs-plus/emacs-plus@27
 
 ```
 
-```shell script
+```shell
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 ```
