@@ -4,19 +4,65 @@
 
 #zmodload zsh/zprof
 
-# Prezto
+# Load Prezto
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# prezto's utility module wraps `make` (only useful with colormake, not installed).
+# Drop it: the lazy-loaded stub breaks shells that snapshot functions (Claude Code).
+(( $+functions[make] )) && unfunction make
 
-export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+#
+PROMPT='%1~ > '
+RPROMPT=''
+
+# Load Prezto configuration
+[[ -s "$HOME/.zpreztorc" ]] && source "$HOME/.zpreztorc"
+
+
+# export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+
+export LANG=en_US.UTF-8
 
 
 #######################################################################
 # Aliases
 #######################################################################
 alias pw="env LC_CTYPE=C LC_ALL=C tr -dc \"A-Z\" < /dev/urandom | head -c 24; echo"
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ~='cd ~'
+alias -- -='cd -'
+
+# Listing
+alias ll='ls -alF'
+alias lt='ls -ltr'
+
+# Git shortcuts
+alias gs='git status'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gp='git push'
+alias gl='git log --oneline --graph --decorate'
+alias gco='git checkout'
+
+# Docker shortcuts
+alias dps='docker ps'
+alias dc='docker compose'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias dcl='docker compose logs'
+alias dcps='docker compose ps'
+
+# Media shortcuts
+# alias ffp='ffplay -nodisp -hide_banner'
+alias ffp='ffplay -nodisp -hide_banner -icy 1 -loglevel verbose'
+
+# Reload shell config after editing
+alias reload='source ~/.zshrc'
 
 
 #######################################################################
@@ -112,9 +158,10 @@ fpath=(${ASDF_DIR}/completions $fpath)
 #######################################################################
 
 # opam
-export OPAMSWITCH=default
-eval "$(opam env)"
-#eval "$(opam env --switch=default)"
+#export OPAMSWITCH=default
+#eval "$(opam env)"
+export OPAMSWITCH=ls-24
+eval "$(opam env --switch=ls-24 --set-switch)"
 
 
 #######################################################################
@@ -167,3 +214,26 @@ compinit -C
 
 #zprof
 
+# zoxide - must be after compinit
+# https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init zsh)"
+
+
+# Added by Antigravity
+export PATH="/Users/ohrstrom/.antigravity/antigravity/bin:$PATH"
+
+# opencode
+export PATH=/Users/ohrstrom/.opencode/bin:$PATH
+
+
+# atuin
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh --disable-ctrl-r --disable-up-arrow)"
+
+# Ctrl+A instead of Ctrl+R
+bindkey '^A' atuin-search
+bindkey '^[[1;5A' atuin-search  # Ctrl+Up
+
+# Restore Prezto history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down

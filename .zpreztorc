@@ -20,6 +20,7 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'vi'
 
 # sorin powerline paradox oliver minimal nicoulaj
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'minimal'
 
 zstyle ':prezto:module:terminal' auto-title 'yes'
+
